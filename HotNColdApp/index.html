@@ -25,7 +25,7 @@
 			<nav> 
 				<ul class="clearfix">
 					<li><a class="what" href="#">What ?</a></li>
-					<li><a class="new" href="#" onclick="newGame();">+ New Game</a></li>
+					<li><a class="new" id="game" href="#" onclick="newGame();">+ New Game</a></li>
 				</ul>
 			</nav>
 			
@@ -56,14 +56,14 @@
 			<h2 id="feedback">Make your Guess!</h2>
 
 			<form>
-				<input type="text" name="userGuess" id="userGuess" class="text" maxlength="3" autocomplete="off" placeholder="Enter your Guess" required/>
-      			<input type="submit" id="guessButton" class="button" name="submit" value="Guess" onclick="feedback();"/>
+				<input type="text" onClick="clear();" name="userGuess" id="userGuess" class="text" maxlength="3" autocomplete="off" placeholder="Enter your Guess"/>
+      			<input type="submit" id="guessButton" class="button" name="submit" value="Guess" onclick="feedback()";/>
 			</form>
 			
-      		<p>Guess #<span id="count" data-bind='text:count'>0</span>!</p>
+      		<p>Guess #<span id="count">0</span>!</p>
 			
 			<ul id="guessList" class="guessBox clearfix">
-            <li>1</li>
+            <li style="display:none"></li>
 
 			</ul>
 

@@ -1,6 +1,9 @@
 
+isGuessInvalid = false;
+isGuesCorrect = false;
+
 $(document).ready(function () {
-//    var count = 0;
+    var count = 0;
     /*--- Display information modal box ---*/
     $(".what").click(function () {
         $(".overlay").fadeIn(1000);
@@ -13,85 +16,82 @@ $(document).ready(function () {
     });
 
 
-    
-//    $('#guessButton').click(function () {
-//        count++;
-//        $('#count').html(count);
-//        
-//    });
+
+    $('#guessButton').click(function (event) {
+        event.preventDefault();
+        if (!isGuessInvalid && !isGuesCorrect) {
+            count++;
+            $('#guessList li').show();
+            $('#guessList li').append(" " + $('#userGuess').val());
+        }
+        $('#count').text(count);
+
+        if (isGuesCorrect) {
+            $('#guessButton').css("disabled", "true");
+            $('#game').toggleClass('blink');
+        }
+    });
 
 });
 
-var guessCorrect=0;
 
-var secretNo = null;
 
-var secretNumber = null;
+var secretNo = Math.floor((Math.random() * 100) + 1); ;
 
 function newGame() {
-    localStorage.secretNo = Math.floor((Math.random() * 100) + 1);   
-    
-//    alert(localStorage.secretNo);
+    window.location.reload();
 }
-secretNo = secretNumber;
-var guessNo=document.getElementById("guessList").value;
-var clicks = 0;
+
+function clear() {
+    document.getElementById("userGuess").value = "";
+}
+
 function feedback() {
-    
-//        clicks += 1;
-//        document.getElementById("count").innerHTML = clicks; 
-    
-    //  alert(localStorage.secretNo);
-    if (localStorage.secretNo != null) {
-        var secretNum = localStorage.secretNo;
-    }
-    else
-        localStorage.secretNo = Math.floor((Math.random() * 100) + 1);
 
     var userNum = document.getElementById("userGuess").value;
-
-        
+    var feedback = document.getElementById("feedback");
+    
     if (isNaN(userNum) || (userNum - Math.floor(userNum)) != 0) {
-        alert("Must input numbers");        
-        return false;
+        feedback.innerHTML = "*Must input numbers*";
+        isGuessInvalid = true;        
     }
 
     var diff = null;
-    if (userNum > secretNum) {
-        diff = userNum - secretNum;
+    if (userNum > secretNo) {
+        diff = userNum - secretNo;
     }
     else {
-        diff = secretNum - userNum;
+        diff = secretNo - userNum;
     }
     
     if (diff >= 50) {
-        alert("ICE COLD");
+        feedback.innerHTML = "ICE COLD";
+        isGuessInvalid = false;
     }
 
     else if ((diff >= 30) && (diff < 50)) {
-        alert("COLD");
+        feedback.innerHTML = "COLD";
+        isGuessInvalid = false;
     }
 
     else if ((diff >= 20) && (diff < 30)) {
-        alert("WARM");
+        feedback.innerHTML = "WARM";
+        isGuessInvalid = false;
     }
 
     else if ((diff >= 10) && (diff < 20)) {
-        alert("HOT");
+        feedback.innerHTML = "HOT";
+        isGuessInvalid = false;
     }
 
     else if ((diff >= 1) && (diff < 10)) {
-        alert("VERY HOT");
+        feedback.innerHTML = "VERY HOT";
+        isGuessInvalid = false;
     }
 
     else if (diff == 0) {
-    guessCorrect = 1;
-    alert("You WON");
-    }
-
-    if(guessCorrect==0)
-    {
-        document.getElementById("guessList").value=guessNo+userNum;
+    isGuesCorrect = true;
+    feedback.innerHTML = "***You WON***";
     }
 }
 
