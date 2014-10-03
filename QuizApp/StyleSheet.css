@@ -1,0 +1,22 @@
+﻿body 
+{
+    margin-left:10px;
+    padding-left:10px;
+    border-left-width:50px;
+    border:20px solid black;
+}
+
+
+.Questions
+{
+    font-style:italic;
+    font-weight:bolder;
+    
+}
+
+
+.radioAnswers
+{
+    font-style:normal;
+    font-weight:normal;
+}
