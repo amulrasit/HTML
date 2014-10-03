@@ -96,10 +96,10 @@ function radioDesign(qChoice) {
 }
 
 function ClearRadio() {
-    document.getElementById("radioAnswer1").value = 0;
-    document.getElementById("radioAnswer2").value = 0;
-    document.getElementById("radioAnswer3").value = 0;
-    document.getElementById("radioAnswer4").value = 0;
+    document.getElementById("radioAnswer1").checked = false;
+    document.getElementById("radioAnswer2").checked = false;
+    document.getElementById("radioAnswer3").checked = false;
+    document.getElementById("radioAnswer4").checked = false;
 }
 
 var score = 0;
