@@ -1,0 +1,187 @@
+﻿body
+{
+    background: rgba(255,255,255,1);
+    background: -moz-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(189,227,239,1) 0%, rgba(101,190,215,0.97) 52%, rgba(255,255,255,0.95) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(255,255,255,1)), color-stop(0%, rgba(189,227,239,1)), color-stop(52%, rgba(101,190,215,0.97)), color-stop(100%, rgba(255,255,255,0.95)));
+    background: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(189,227,239,1) 0%, rgba(101,190,215,0.97) 52%, rgba(255,255,255,0.95) 100%);
+    background: -o-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(189,227,239,1) 0%, rgba(101,190,215,0.97) 52%, rgba(255,255,255,0.95) 100%);
+    background: -ms-linear-gradient(left, rgba(255,255,255,1) 0%, rgba(189,227,239,1) 0%, rgba(101,190,215,0.97) 52%, rgba(255,255,255,0.95) 100%);
+    background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(189,227,239,1) 0%, rgba(101,190,215,0.97) 52%, rgba(255,255,255,0.95) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+    background-image:url("wall.png");    
+    background-repeat:no-repeat;
+    background-size:100% 200px;
+}
+
+
+#header
+{
+    /*background-color:#99E6FF;*/
+    width:100%;
+    float:left;
+    height:40px;
+    font-size:40px;
+    margin-bottom:20px;
+    color:White;
+    padding-top:50px;  
+    
+    font-family: "museo-sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 100;
+    font-weight:bold; 
+    
+    }
+    
+    #section
+{
+      
+    width:100%;
+    height:50px;
+}
+
+
+
+#section ,li
+{
+    display:inline-block;
+    font-size:20px;
+    font-family:Sans-Serif;
+    color:White;
+    padding:5px;
+    position:relative;
+}
+
+.spin
+{    
+   /* width: 200px;
+	height: 200px;
+	
+	background-image: -moz-radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+	background-image: -webkit-radial-gradient(45px 45px, circle cover, yellow, orange);
+	background-image: radial-gradient(45px 45px 45deg, circle cover, yellow 0%, orange 100%, red 95%);
+	
+	animation-name: spin; 
+	animation-duration: 3s;
+	animation-iteration-count: infinite; 
+	animation-timing-function: linear;       */
+	
+	position: 50% 50%;
+    repeat: no-repeat;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border-image-width:20px;
+    border-color:Black;
+    margin:10px;
+    
+}
+
+.portfolioImg
+{
+    
+    overflow:hidden;
+    position:relative;
+    text-align: center;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    display: inline;
+    border: 1px solid #248FB2;
+    height: 350px;
+    width: 350px;
+    margin: 14px;
+    
+}
+
+#bgrnd
+{
+    /*background-color:#99E6FF;*/
+    background-image:url('bg.png');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+}
+
+span.text-content {
+  background: rgba(0,0,0,0.5);
+  color: White;
+  cursor: pointer;
+  display:none;
+  z-index:99;
+  font-weight:bolder;
+  margin: 14px;
+  width: 350px;
+  height:350px;
+  position:absolute;
+  left:0;
+  top:0;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+   border: 5px solid #248FB2;
+}
+ 
+ul #PFSection li img:hover span.text-content {
+  opacity: 1;
+}
+
+.descDisplay
+{
+    display:inline;
+}
+
+span.text-content span {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
+ul #PFSection li, #PFSection
+{
+    position:relative;
+}
+
+.linkText
+
+{
+    color:White;
+    
+    border:30px;
+    
+    padding: 9%;
+    text-align: center;
+        
+    bottom: 0px;
+    
+   
+    box-sizing: border-box;
+    font-weight: bold;
+}
+
+.panelDetails
+{
+
+display:none;
+margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-size: 100%;
+vertical-align: baseline;
+line-height:1.3em;
+font-family: 'bree_serifregular', serif;
+color:White;
+font-style:normal;
+font-weight:bolder;
+font-size:large;
+}
+
+.contact
+{
+    height:70px;
+    width:70px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius:20px;
+    padding:10px;
+}
